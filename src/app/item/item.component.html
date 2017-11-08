@@ -1,0 +1,12 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm.value)">
+    <label for="id">ID</label>
+    <input type="text" name="id" ngModel required>
+    <label for="name">Name</label>
+    <input type="text" name="name" ngModel required>
+    <label for="description">Description</label>
+    <input type="text" name="description" ngModel required>
+    <button type="submit" mat-button color="primary">Append</button>
+</form>
+<div layout="row" *ngFor="let currentItem of items"> 
+    <item-row [item]="currentItem"></item-row>
+</div>
